@@ -4,7 +4,7 @@ struct node
 {
     int data;
     struct node*add;
-};struct node*start=NULL,*temp,*prev,*new1,*next;
+};struct node*start=NULL,*temp,*prev,*new1,*next,*a[1000];
 void create();
 void insert_first();
 void insert_mid();
@@ -13,7 +13,8 @@ void delete_first();
 void delete_mid();
 void delete_last();
 void display();
-
+void reverse();
+void count();
 void main()
 {
     int n;
@@ -21,7 +22,7 @@ void main()
     printf("....Linked List....");
     do
     {
-      printf("\n1.Create\n2.insert_first\n3.insert_mid\n4.insert_last\n5.delete_first\n6.delete_mid\n7.delete_last\n8.display\n9.exit\n");
+      printf("\n1.Create\n2.insert_first\n3.insert_mid\n4.insert_last\n5.delete_first\n6.delete_mid\n7.delete_last\n8.display\n9.reverse\n10.count\n11.exit\n");
       printf("\n");
       printf("Enter your choice :");
       scanf("%d",&n);
@@ -51,13 +52,18 @@ void main()
         case 8:
         display();
         break;
+        case 9:
+        reverse();
+        break;
+        case 10:
+        count();
+        break;
       
       default:
     
         break;
       }  
-    } while (n!=9);
-    
+    } while (n!=9);   
 }
 void create()
 {
@@ -73,7 +79,6 @@ void create()
         start->data=n;
         start->add=NULL;
         temp=start;
-   
     }
     else
     {
@@ -229,4 +234,48 @@ void delete_last()
          printf("Deleted node is %d ",temp->data);
         free(temp);
          }
+}
+void reverse()
+{
+    int i=0;
+    if(start==NULL)
+    {
+        printf("list is empty");
+    }
+    else
+    {
+        temp=start;
+        while (temp!=NULL)
+        {
+            a[i++]=temp;
+            temp=temp->add;
+        }
+        int p=i-1;
+        printf("\nreverse element : ");
+        
+        while (p>=0)
+        {
+            printf("%d ",a[p]->data);
+            p--;
+        }
+        
+        
+ }
+    
+}
+void count()
+{ int step=0;
+   if(start==NULL)
+    {
+        printf("list is empty");
+    }
+    temp=start;
+    while (temp!=NULL)
+    {
+        step++;
+        temp=temp->add;
+        
+    }
+    printf("\ntotal node in linked list is %d\n",step);
+     
 }

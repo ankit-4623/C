@@ -5,7 +5,7 @@ void bubble_sort(int a[],int n)
     {
         int swap=0;
        for (int j = 0; j<n-i; j++)
-       {
+    {
         if(a[j]>a[j+1])
         {
             int temp=a[j+1];
@@ -13,7 +13,7 @@ void bubble_sort(int a[],int n)
             a[j]=temp;
             swap=1;
         }
-         }
+    }
          if(swap==0)
          {
             break;

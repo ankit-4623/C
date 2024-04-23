@@ -9,7 +9,7 @@ int main()
        scanf("%d%d%d",&n,&a,&b);
        if(n==a&&n==b)
        printf("Yes\n");
-       else if ((a<=n&&b<=n)&&(n-b+1>a)&&(n-b+1-a>=2))
+       else if ((a<=n&&b<=n)&&(n-b+1>a)&&(n-b+1-a>2))
        {
                printf("Yes\n");
 

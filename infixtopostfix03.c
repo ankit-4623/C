@@ -42,6 +42,7 @@ void intopost() {
             case '*':
             case '+':
             case '-':
+            case '^':
                 while (!isempty() && precedence(stack[top]) >= precedence(symbol)) {
                     postfix[j++] = pop();
                 }
