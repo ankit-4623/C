@@ -1,6 +1,7 @@
 #include<stdio.h>
 void bubble_sort(int a[],int n)
 {
+    int count=0;
     for (int i = 0; i < n; i++)
     {
         int swap=0;
@@ -13,13 +14,15 @@ void bubble_sort(int a[],int n)
             a[j]=temp;
             swap=1;
         }
-    }
+    } 
          if(swap==0)
          {
             break;
          }
-       printf("\ncount\n");
+      count++;
     }
+    printf("total step is \n%d\n",count);
+
 }
 int main()
 {
@@ -35,4 +38,5 @@ int main()
     {
         printf("%d ",a[i]);
     }
+    
 }
